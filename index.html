@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>點一下照片</title>
+</head>
+<body>
+    <h2>照片集</h2>
+    <img src="pic00.jpg" alt="" onmousedown="this.src=nextImage()">
+    <script>
+        var curIndex=0;
+        var imgArray = new Array();
+        var pics=4;
+        for(i=0;i<pics;i++)
+        {
+            imgArray[i]=new Image();
+            imgArray[i].src="pic0"+i+".jpg";  
+        }
+        function nextImage(){
+            curIndex++;
+            curIndex=curIndex % pics;
+            return(imgArray[curIndex].src); 
+        }
+
+    </script>
+</body>
+</html>
